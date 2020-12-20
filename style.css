@@ -76,6 +76,7 @@ img {
 
 
 
+
 /* Header styles */
 
 .banner {
@@ -177,12 +178,8 @@ img {
    padding-bottom: 1em;
 }
 
-.banner .main-links li:last-of-type a {
-   padding: 0.5em;
-}
-
 .banner .main-links li:last-of-type {
-   background-color: cyan;
+   background-color: var(--Cyan);
    border-radius: var(--pry-radius);
 }
 
@@ -290,6 +287,7 @@ main > .statistics .division > img {
 main > .boost {
    background-color: var(--Dark-Violet);
    background-image: url("images/bg-boost-mobile.svg");
+   background-repeat: repeat-x;
    padding: 4em 0;
    margin: 0 -2em;
    color: #fff;
@@ -304,4 +302,198 @@ main > .boost h2 {
 
 footer {
    background-color: var(--Very-Dark-Violet);
+   text-align: center;
 }
+
+footer > div:not(:last-child) {
+   margin-bottom: 1.5rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+footer > .logo-wrapper {
+   padding: 3em 0 2em 0;
+   display: inline-block;
+   margin-bottom: 0;
+}
+
+footer > div > h1 {
+   color: #fff;
+   font-size: 18px;
+   margin-bottom: 1.5rem;
+}
+
+footer > div > a {
+   margin-bottom: 1rem;
+   padding: 0;
+}
+
+footer > .social > a:not(:last-child) {
+   margin-right: 20px;
+}
+
+footer > div > a:hover {
+   color: var(--Cyan);
+}
+
+
+/* Media queries */
+
+@media only screen and (min-width: 900px) {
+   .banner {
+      background-position: 550px;
+      display: flex;
+      flex-direction: column;
+      padding: 2em 7em;
+   }
+
+   .banner > .banner-logo {
+      display: flex;
+      align-items: center;
+   }
+
+   .banner .logo-wrapper {
+      margin-right: 40px;
+   }
+
+   .banner .main-links {
+      width: 80%;
+      position: initial;
+      height: initial;
+      background-color: initial;
+   }
+
+   .banner #toggler,
+   .banner .hamburger {
+      display: none;
+   }
+
+   .banner .main-links ul {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 0;
+   }
+
+   .banner .main-links li {
+      padding: 0;
+      margin: 0;
+   }
+
+   .banner .main-links li:nth-of-type(3) {
+      border: none;
+      padding: 0;
+   }
+
+   .banner .main-links li:nth-last-of-type(2) {
+      margin-left: auto;
+   }
+
+   .banner .main-links li:last-of-type a {
+      padding: 0.5em 1.5em;
+      color: #fff;
+   }
+
+   .banner .main-links a {
+      padding: 0;
+      color: var(--Grayish-Violet);
+      font-weight: 700;
+   }
+
+   .banner .main-links a:hover,
+   .banner .main-links a:focus {
+      color: var(--Very-Dark-Violet);
+   }
+
+   .banner > .banner-text {
+      font-size: 20px;
+      padding: 10em 0;
+      width: 30ch;
+      flex-grow: none;
+      text-align: initial;
+   }
+
+   /* Main Styles */
+   
+   main > .url {
+      width: calc(100% - 13em);
+      padding: 2em;
+   }
+
+   main .url-wrapper {
+      flex-direction: row;
+   }
+
+   main .url-wrapper > input {
+      width: 80%;
+   }
+
+   main .url-wrapper > button {
+      width: 20%;
+   }
+
+   main > .statistics {
+      padding: 4.5em;
+   }
+
+   main > .statistics > .statistics-title {
+      width: 45ch;
+      margin: 0 auto 6rem auto;
+   }
+
+   main .division-wrapper {
+      text-align: left;
+      display: flex;
+      gap: 2em;
+   }
+
+   main > .statistics .division:nth-child(2) {
+      top: 40px;
+   }
+
+   main > .statistics .division:nth-child(3){
+      top: 80px;
+   }
+
+   main > .statistics .division:not(:last-child)::after {
+      top: 50%;
+      left: 125%;
+      height: 8px;
+      width: 50%;
+   }
+
+   main > .statistics .division > img {
+      left: 20%;
+   }
+
+   /* Footer styles */ 
+
+   footer {
+      display: flex;
+      gap: 6rem;
+      justify-content: center;
+      align-items: center;
+      text-align: initial;
+   }
+
+   footer > div {
+      align-self: flex-start;
+   }
+
+   footer > div:not(:first-child) {
+      padding-top: 3em;
+   }
+
+   footer > .logo-wrapper {
+      margin-right: 2rem;
+   }
+
+   footer > div > a,
+   footer > div > h1 {
+      margin-right: auto;
+   }
+
+}
+
