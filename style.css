@@ -242,6 +242,39 @@ main .url-wrapper > button {
 main .url-wrapper > button {
    background-color: var(--Cyan);
    color: #fff;
+   cursor: pointer;
+}
+
+main > .result-wrapper {
+   margin-top: 3rem;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background-color: #fff;
+   font-size: 16px;
+   text-align: left;
+   padding: 1em;
+}
+
+main > .result-wrapper > span:nth-child(1) {
+   border-bottom: 1px solid #DFE3EEaf;
+   padding-bottom: 0.5em;
+}
+
+main > .result-wrapper > span:nth-child(2) {
+   color: var(--Cyan);
+   padding: 0.5em 0;
+}
+
+main > .result-wrapper > button {
+   border: none;
+   padding: 0.7em 2em;
+   font-family: inherit;
+   border-radius: inherit;
+   color: #fff;
+   background-color: var(--Cyan);
+   cursor: pointer;
 }
 
 main > .statistics {
@@ -432,6 +465,44 @@ footer > div > a:hover {
 
    main .url-wrapper > button {
       width: 20%;
+   }
+
+   main > .error-message {
+      margin: 3rem;
+      color: red; 
+      animation: fleet 1s ease;
+   }
+
+   @keyframes fleet {
+      0% {
+         opacity: 0;
+         transform: translateY(-3rem);
+      }
+
+      100% {
+         opacity: 1;
+         transform: translateY(0);
+      }
+   }
+
+   main > .result-wrapper {
+      width: calc(100% - 9em);
+      margin: 3rem auto;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+   }
+
+   main > .result-wrapper > span:nth-child(1) {
+      border: none;
+      padding: 0;
+   }
+
+   main > .result-wrapper > span:nth-child(2) {
+      margin-left: auto;
+      margin-right: 30px;
+      padding: 0;
    }
 
    main > .statistics {
