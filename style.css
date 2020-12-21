@@ -214,7 +214,7 @@ main > .url {
    top: 0;
    left: 50%;
    transform: translate(-50%, -50%);
-   padding: 1em;
+   padding: 1.5em;
    background-color: var(--Dark-Violet);
    background-image: url("images/bg-shorten-mobile.svg");
    background-repeat: no-repeat;
@@ -243,6 +243,31 @@ main .url-wrapper > button {
    background-color: var(--Cyan);
    color: #fff;
    cursor: pointer;
+}
+
+main .error-message {
+   display: none;
+   position: absolute;
+   bottom: -30px;
+   left: 10;
+}
+
+main .active {
+   display: block;
+   color: red; 
+   animation: fleet 2s ease;
+}
+
+@keyframes fleet {
+   0% {
+      opacity: 0;
+      transform: translateX(-3rem);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
 }
 
 main > .result-wrapper {
@@ -465,24 +490,6 @@ footer > div > a:hover {
 
    main .url-wrapper > button {
       width: 20%;
-   }
-
-   main > .error-message {
-      margin: 3rem;
-      color: red; 
-      animation: fleet 1s ease;
-   }
-
-   @keyframes fleet {
-      0% {
-         opacity: 0;
-         transform: translateY(-3rem);
-      }
-
-      100% {
-         opacity: 1;
-         transform: translateY(0);
-      }
    }
 
    main > .result-wrapper {
