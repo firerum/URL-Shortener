@@ -270,6 +270,11 @@ main .active {
    }
 }
 
+.stored-message {
+   color: red;
+   margin: 3rem 0;
+}
+
 main > .result-wrapper {
    margin-top: 3rem;
    border-radius: 5px;
