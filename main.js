@@ -37,8 +37,17 @@ function linkShortener() {
             original.textContent = data["result"]["original_link"];
             copy.textContent = "copy";
          })
+         .then(() => {
+            // Put the links into an object
+            const previousLinks = {
+               fullLink: document.querySelector("main > .result-wrapper > span:first-Child").textContent,
+               shortOne: document.querySelector("main > .result-wrapper > span:nth-child(2)").textContent
+            };
+            // Store the links into local storage
+            localStorage.setItem("links", JSON.stringify(previousLinks));
+         })
          .catch(err => {
-            div.textContent = "not a valid link";
+            div.textContent = "Invalid Link or No Internet";
          });
 
       // Create function to copy link to the clip-board
@@ -65,13 +74,24 @@ btn.addEventListener("click", linkShortener);
 
 
 /* Store the shortened links into local storage */
-function retrieveLinks() {
-    const shortLink = document.querySelector("main > .result-wrapper > span:nth-child(2)");
-    const storedLink = shortLink.textContent;
-    const p = document.createElement("p");
-    p.className = "error-message";
-    localStorage.setItem("name", storedLink.toString());
-    p.textContent = localStorage.getItem("name");
-    content.insertAdjacentElement("afterbegin", p);
-}
+const retrieveLinks = () => {
+   const div = document.createElement("div");
+   div.className = "result-wrapper";
+   content.insertAdjacentElement("afterbegin", div);
+   // Check if links are stored local storage
+   if(localStorage.getItem("links")) {
+      // Convert the links back to object then destructure them
+      let {fullLink, shortOne} = JSON.parse(localStorage.getItem("links"));
+      div.innerHTML = `<span>${fullLink}</span><span>${shortOne}</span>`;
+   } else {
+      div.textContent = "you have no previous shortened links";
+   } 
+};
+
+window.addEventListener("load", retrieveLinks);
+
+
+
+
+
 
