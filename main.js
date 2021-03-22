@@ -43,7 +43,6 @@ function linkShortener() {
                fullLink: document.querySelector("main > .result-wrapper > span:first-Child").textContent,
                shortOne: document.querySelector("main > .result-wrapper > span:nth-child(2)").textContent
             };
-            // Store the links into local storage
             localStorage.setItem("links", JSON.stringify(previousLinks));
          })
          .catch(err => {
@@ -85,7 +84,7 @@ const retrieveLinks = () => {
       div.innerHTML = `<span>${fullLink}</span><span>${shortOne}</span>`;
    } else {
       div.textContent = "you have no previous shortened links";
-   } 
+   }   
 };
 
 window.addEventListener("load", retrieveLinks);

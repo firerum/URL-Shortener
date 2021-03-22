@@ -398,7 +398,13 @@ footer > div > a:hover {
 
 /* Media queries */
 
-@media only screen and (min-width: 900px) {
+@media (min-width: 700px) and (max-width: 966px)  {
+   body {
+      font-size: 0.8rem;
+   }
+}
+
+@media only screen and (min-width: 758px) {
    .banner {
       background-position: 550px;
       display: flex;
@@ -438,6 +444,10 @@ footer > div > a:hover {
    .banner .main-links li {
       padding: 0;
       margin: 0;
+   }
+
+   .banner .main-links li:first-child {
+      margin-left: auto;
    }
 
    .banner .main-links li:nth-of-type(3) {
@@ -523,7 +533,8 @@ footer > div > a:hover {
 
    main .division-wrapper {
       text-align: left;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 2em;
    }
 
@@ -531,15 +542,8 @@ footer > div > a:hover {
       top: 40px;
    }
 
-   main > .statistics .division:nth-child(3){
-      top: 80px;
-   }
-
    main > .statistics .division:not(:last-child)::after {
-      top: 50%;
-      left: 125%;
-      height: 8px;
-      width: 50%;
+      display: none;
    }
 
    main > .statistics .division > img {
@@ -573,5 +577,23 @@ footer > div > a:hover {
       margin-right: auto;
    }
 
+}
+
+@media (min-width: 1230px) {
+   main .division-wrapper {
+      display: flex;
+   }
+
+   main > .statistics .division:not(:last-child)::after {
+      display: block;
+      top: 50%;
+      left: 125%;
+      height: 8px;
+      width: 50%;
+   }
+
+   main > .statistics .division:nth-child(3){
+      top: 80px;
+   }
 }
 
