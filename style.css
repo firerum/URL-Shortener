@@ -557,22 +557,18 @@ footer > div > a:hover {
 
    footer {
       display: flex;
-      gap: 6rem;
       justify-content: center;
       align-items: center;
       text-align: initial;
    }
 
    footer > div {
+      margin-left: 4rem;
       align-self: flex-start;
    }
 
    footer > div:not(:first-child) {
       padding-top: 3em;
-   }
-
-   footer > .logo-wrapper {
-      margin-right: 2rem;
    }
 
    footer > div > a,
